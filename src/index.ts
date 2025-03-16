@@ -1,25 +1,14 @@
-import { Injector, Logger, webpack } from "replugged";
+import { Injector, Logger, common } from "replugged";
 
 const inject = new Injector();
-const logger = Logger.plugin("PluginTemplate");
+const logger = Logger.plugin("Medal Plugin");
 
 export async function start(): Promise<void> {
-  const typingMod = await webpack.waitForModule<{
-    startTyping: (channelId: string) => void;
-  }>(webpack.filters.byProps("startTyping"));
-  const getChannelMod = await webpack.waitForModule<{
-    getChannel: (id: string) =>
-      | {
-          name: string;
-        }
-      | undefined;
-  }>(webpack.filters.byProps("getChannel"));
-
-  if (typingMod && getChannelMod) {
-    inject.instead(typingMod, "startTyping", ([channel]) => {
-      const channelObj = getChannelMod.getChannel(channel);
-      logger.log(`Typing prevented! Channel: #${channelObj?.name ?? "unknown"} (${channel}).`);
-    });
+  logger.log(`Ohio will be destroyed.`);
+  let ChannelID = common.channels.getCurrentlySelectedChannelId()
+  let Messages = common.messages.getMessages(ChannelID)
+  for (let cycle=0; cycle < Messages.length; cycle++) {
+    logger.log(Messages[cycle])
   }
 }
 

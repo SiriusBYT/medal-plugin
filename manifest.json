@@ -1,16 +1,16 @@
 {
-  "id": "dev.replugged.PluginTemplate",
-  "name": "Plugin Template",
-  "description": "A plugin template",
+  "id": "com.sirio-network.medal",
+  "name": "Medal Plugin",
+  "description": "A simple replugged plugin that lets you open Medal links directly in the Medal application. ",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "Ascellayn",
+    "discordID": "311057290562371586",
+    "github": "SiriusBYT"
   },
   "version": "1.0.0",
   "updater": {
     "type": "github",
-    "id": "replugged-org/plugin-template"
+    "id": "SiriusBYT/medal-plugin"
   },
   "license": "MIT",
   "type": "replugged-plugin",
